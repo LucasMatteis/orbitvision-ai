@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Resultado da análise</h1>
+
+<div class="result-icon">
+    {{ emoji }}
+</div>
+
+<h2>{{ result }}</h2>
+<hr>
+
+<p>
+Análise concluída com sucesso pelo modelo OrbitVision AI.
+</p>
+
+<p>
+    <strong>Nível de risco:</strong>
+    <span class="{{ risk_class }}">
+        {{ risk }}
+    </span>
+</p>
+    <p><strong>Recomendação:</strong> {{ recommendation }}</p>
+
+<a href="/" class="btn-secondary">
+    🔄 Nova Análise
+</a>
+</div>
+
+</body>
+</html>

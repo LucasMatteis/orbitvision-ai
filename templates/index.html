@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OrbitVision AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="logo-container">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="OrbitVision AI">
+</div>
+
+<div class="container">
+    <h1>OrbitVision AI</h1>
+
+    <p>
+        <strong>Monitoramento ambiental inteligente.</strong>
+    </p>
+
+    <p>
+        Utilizando processamento digital de imagens e machine learning
+        aplicados a dados de satélite.
+    </p>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+
+        <label for="image" class="upload-label">
+            📡 Selecionar imagem de satélite
+        </label>
+
+        <input
+            id="image"
+            type="file"
+            name="image"
+            required
+        >
+
+        <button type="submit">
+            🛰️ Analisar imagem
+        </button>
+
+    </form>
+
+</div>
+
+<script>
+const input = document.getElementById("image");
+const label = document.querySelector(".upload-label");
+
+input.addEventListener("change", function() {
+    if (this.files.length > 0) {
+        label.innerHTML = "✅ " + this.files[0].name;
+    }
+});
+</script>
+
+</body>
+</html>
